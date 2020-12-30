@@ -12,39 +12,38 @@ import javax.faces.context.FacesContext;
 @RequestScoped
 //@SessionScoped
 public class KredytBB {
-	private String a;
-	private String b;
-	private String n;
+	private Double a;
+	private Double b;
+	private Double n;
 	private Double result;
 
 	@Inject
 	FacesContext ctx;
+	
 
-
-	public String getA() {
+	public Double getA() {
 		return a;
 	}
 
-	public void setA(String a) {
+	public void setA(Double a) {
 		this.a = a;
 	}
 
-	public String getB() {
+	public Double getB() {
 		return b;
 	}
 
-	public void setB(String b) {
+	public void setB(Double b) {
 		this.b = b;
 	}
 
-	public String getN() {
+	public Double getN() {
 		return n;
 	}
 
-	public void setN(String n) {
+	public void setN(Double n) {
 		this.n = n;
 	}
-	
 
 	public Double getResult() {
 		return result;
@@ -56,9 +55,6 @@ public class KredytBB {
 
 	public boolean doTheMath() {
 		try {
-			double a = Double.parseDouble(this.a);
-			double b = Double.parseDouble(this.b);
-			double n = Double.parseDouble(this.n);
 			
 			b=b/100;
 			double q=1+(b/12);

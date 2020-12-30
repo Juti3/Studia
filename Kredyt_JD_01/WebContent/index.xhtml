@@ -17,15 +17,15 @@
 	<h:panelGrid id="grid" columns="3" cellpadding="5">
 	
   		<p:outputLabel for="a" value="Kwota kredytu:" />
-	  	<p:inputText id="a" value="#{kredytBB.a}" required="true" requiredMessage="Wpisz kwotę kredytu" />
+	  	<p:inputText id="a" value="#{kredytBB.a}" required="true" requiredMessage="Wpisz kwotę kredytu" converterMessage="Wpisz liczbę" validatorMessage="Kwota nie może być mniejsza niż 10 000" ><f:validateDoubleRange minimum="10000"/></p:inputText>
 	  	<p:message for="a" />
 		
   		<p:outputLabel for="b" value="Oprocentowanie:" />
-	  	<p:inputText id="b" value="#{kredytBB.b}" required="true" requiredMessage="Wpisz wysokość oprocentowania" />
+	  	<p:inputText id="b" value="#{kredytBB.b}" required="true" requiredMessage="Wpisz wysokość oprocentowania" converterMessage="Wpisz liczbę" validatorMessage="Oprocętowanie nie może być wyższe niż 100%" ><f:validateDoubleRange minimum="0" maximum="100"/></p:inputText>
 	  	<p:message for="b" />
 		
 		<p:outputLabel for="n" value="Liczba rat:" />
-	  	<p:inputText id="n" value="#{kredytBB.n}" required="true" requiredMessage="Wpisz liczbę rat" />
+	  	<p:inputText id="n" value="#{kredytBB.n}" required="true" requiredMessage="Wpisz liczbę rat" converterMessage="Wpisz liczbę" validatorMessage="Minimalna liczba rat to 12"><f:validateDoubleRange minimum="12"/></p:inputText> 
 	  	<p:message for="n" />
 
 		<p:commandButton value="Oblicz ratę" action="#{kredytBB.calc()}" update="@form" />
